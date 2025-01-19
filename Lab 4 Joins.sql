@@ -60,5 +60,8 @@ INNER JOIN film f
 ON i.film_id = f.film_id
 WHERE title = "Academy Dinosaur"; 
 
-SELECT *
-FROM inventory;
+SELECT title, COUNT(inventory_id)
+FROM inventory i 
+INNER JOIN film f
+ON i.film_id = f.film_id
+GROUP BY title; 
