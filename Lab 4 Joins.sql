@@ -44,3 +44,21 @@ INNER JOIN film_category c
 ON f.film_id = c.film_id
 GROUP BY category_id
 ORDER BY avg_length DESC;
+
+SELECT COUNT(rental_id) AS total, title
+FROM rental r
+INNER JOIN inventory i 
+ON r.inventory_id = i.inventory_id
+INNER JOIN film f 
+ON f.film_id = i.film_id
+GROUP BY title
+ORDER BY total DESC;
+
+SELECT store_id, title, inventory_id
+FROM inventory i 
+INNER JOIN film f
+ON i.film_id = f.film_id
+WHERE title = "Academy Dinosaur"; 
+
+SELECT *
+FROM inventory;
